@@ -68,38 +68,18 @@ $listFAQ = [
                 <?php 
                 foreach ($section as $key => $paragraph)
                 {
-                    if ($key === 'heading') { ?>
-                        <li><h2><?php echo $paragraph ?></h2></li>
-                    <?php
+                    if ($key === 'heading') {
+                        echo '<li><h2>' . $paragraph . '</h2></li>';
+                    
                     } 
-                    elseif (is_numeric($key)) { ?>                    
-                        <li><?php echo $paragraph; ?></li>
-                    <?php
+                    elseif (is_numeric($key)) { 
+                        echo '<li>' . $paragraph . '</li>';
                     }
-                    elseif (strpos($key, 'list') !== false) {                     
-                                                         
-                        foreach ($paragraph as $key2 => $list)
-                        { 
-                            ?>
-                            <ol>
-                                <?php
-                                if ($key2 === 'heading') { ?>
-                                    <li><?php echo $list; ?></li>
-                                <?php
-                                } elseif (is_numeric($key2)) { ?>
-                                    <li><?php echo $list; ?>
-                                    </li>
-                                <?php } ?>                            
-                        <?php } ?>
-                        </ol>
-                    <?php
-                    }
-                    ?> 
-                <?php } ?> 
+                } ?>
             </ul>
 
-        <?php }; ?>
-        
+        <?php }; ?>       
+
 
     </main>
 </body>
